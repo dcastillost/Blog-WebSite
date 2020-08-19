@@ -8,7 +8,7 @@
     <h2><%= post.postTitle %></h2>
     <p>
       <%= post.postBody.slice(0,100) + " ..." %>
-      <a href="/posts/<%= post.postTitle %>">Read more</a>
+      <a href="/posts/<%= post._id %>">Read more</a>
     </p>
 <% }); %>
 
