@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -18,10 +19,9 @@ const mongooseOptions = {
   useNewUrlParser: true
 }
 
-const uri = "mongodb+srv://mongouser:FBsCDCVg1wiCMMhz@cluster0.5tp0i.mongodb.net/blogDB?retryWrites=true&w=majority";
 // const localUrl = 'mongodb://localhost:27017/todoListDB'
 
-mongoose.connect(uri, mongooseOptions);
+mongoose.connect(process.env.URI, mongooseOptions);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
